@@ -2,7 +2,7 @@
 
 《ECMAScript 6 入門》是一本開源的 JavaScript 語言教學，全面介紹 ECMAScript 6 所新增的語法及特性。
 
-[![cover](images/cover_thumbnail.jpg)](images/cover.jpg)
+[![cover](es6tutorial/images/cover_thumbnail.jpg)](images/cover.jpg)
 
 本書力爭覆蓋 ES6 與 ES5 的所有不同之處，對涉及的語法知識給予詳細介紹，並提供大量簡潔易懂的範例程式。
 

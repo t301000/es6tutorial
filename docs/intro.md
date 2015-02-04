@@ -1,46 +1,46 @@
-# ECMAScript 6简介
+# ECMAScript 6 簡介
 
-ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，正处在快速开发之中，大部分已经完成了，预计将在2015年6月正式发布。Mozilla公司将在这个标准的基础上，推出JavaScript 2.0。
+ECMAScript 6（以下簡稱 ES6 ）是 JavaScript 語言的下一代標準，正在快速開發當中，大部分都已經完成了，預計將在 2015 年 6 月正式發布。 Mozilla 公司將在這個標準的基礎上，推出 JavaScript 2.0 。
 
-ES6的目标，是使得JavaScript语言可以用来编写大型的复杂的应用程序，成为企业级开发语言。
+ES6 的目標，是使得 JavaScript 語言可以用來編寫大型且復雜的應用程式，成為企業級開發語言。
 
-## ECMAScript和JavaScript的关系
+## ECMAScript 和 JavaScript 的關系
 
-ECMAScript是JavaScript语言的国际标准，JavaScript是ECMAScript的实现。
+ECMAScript 是 JavaScript 語言的國際標準， JavaScript 是 ECMAScript 的實現。
 
-1996年11月，JavaScript的创造者Netscape公司，决定将JavaScript提交给国际标准化组织ECMA，希望这种语言能够成为国际标准。次年，ECMA发布262号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为ECMAScript。这个版本就是ECMAScript 1.0版。
+1996 年 11 月， JavaScript 的創造者 Netscape 公司，決定將 JavaScript 提交給國際標準化組織 ECMA ，希望這種語言能夠成為國際標準。次年， ECMA 發布 262 號標準文件（ ECMA-262 ）的第一版，規定了瀏覽器腳本語言的標準，並將這種語言稱為 ECMAScript。這個版本就是 ECMAScript 1.0 版。
 
-之所以不叫JavaScript，有两个原因。一是商标，Java是Sun公司的商标，根据授权协议，只有Netscape公司可以合法地使用JavaScript这个名字，且JavaScript本身也已经被Netscape公司注册为商标。二是想体现这门语言的制定者是ECMA，不是Netscape，这样有利于保证这门语言的开放性和中立性。因此，ECMAScript和JavaScript的关系是，前者是后者的规格，后者是前者的一种实现。在日常场合，这两个词是可以互换的。
+之所以不叫 JavaScript ，有兩個原因。一是商標， Java 是 Sun 公司的商標，根據授權協議，只有 Netscape 公司可以合法地使用 JavaScript 這個名字，且 JavaScript 本身也已經被 Netscape 公司註冊為商標。二是想體現這門語言的制定者是 ECMA ，不是 Netscape ，這樣有利於保證這門語言的開放性和中立性。因此，ECMAScript 和 JavaScript 的關系是，前者是後者的規格，後者是前者的一種實現。在日常場合，這兩個詞是可以互換的。
 
-## ECMAScript的历史
+## ECMAScript 的歷史
 
-1998年6月，ECMAScript 2.0版发布。
+1998 年 6 月， ECMAScript 2.0 版發布。
 
-1999年12月，ECMAScript 3.0版发布，成为JavaScript的通行标准，得到了广泛支持。
+1999 年 12 月， ECMAScript 3.0 版發布，成為 JavaScript 的通用標準，得到了廣泛支持。
 
-2007年10月，ECMAScript 4.0版草案发布，对3.0版做了大幅升级，预计次年8月发布正式版本。草案发布后，由于4.0版的目标过于激进，各方对于是否通过这个标准，发生了严重分歧。以Yahoo、Microsoft、Google为首的大公司，反对JavaScript的大幅升级，主张小幅改动；以JavaScript创造者Brendan Eich为首的Mozilla公司，则坚持当前的草案。
+2007 年 10 月， ECMAScript 4.0 版草案發布，對 3.0 版做了大幅升級，預計次年 8 月發布正式版本。草案發布後，由於 4.0 版的目標過於激進，各方對於是否通過這個標準，產生了嚴重的分歧。以 Yahoo 、 Microsoft 、 Google 為首的大公司，反對 JavaScript 的大幅升級，主張小幅改動；以 JavaScript 創造者 Brendan Eich 為首的 Mozilla 公司，則堅持當前的草案。
 
-2008年7月，由于对于下一个版本应该包括哪些功能，各方分歧太大，争论过于激进，ECMA开会决定，中止ECMAScript 4.0的开发，将其中涉及现有功能改善的一小部分，发布为ECMAScript 3.1，而将其他激进的设想扩大范围，放入以后的版本，由于会议的气氛，该版本的项目代号起名为Harmony（和谐）。会后不久，ECMAScript 3.1就改名为ECMAScript 5。
+2008 年 7 月，由於對於下一個版本應該包括哪些功能，各方分歧太大，爭論過於激進， ECMA 開會決定，中止 ECMAScript 4.0 的開發，將其中涉及現有功能改善的一小部分，發布為 ECMAScript 3.1 ，而將其他激進的設想擴大範圍，放入以後的版本，由於會議的氣氛，該版本的專案代號命名為 Harmony （和諧）。會後不久， ECMAScript 3.1 就改名為 ECMAScript 5 。
 
-2009年12月，ECMAScript 5.0版正式发布。Harmony项目则一分为二，一些较为可行的设想定名为JavaScript.next继续开发，后来演变成ECMAScript 6；一些不是很成熟的设想，则被视为JavaScript.next.next，在更远的将来再考虑推出。
+2009 年 12 月， ECMAScript 5.0 版正式發布。 Harmony 專案則一分為二，一些較為可行的想法命名為 JavaScript.next 繼續開發，後來演變成 ECMAScript 6 ；一些不是很成熟的想法，則被視為 JavaScript.next.next ，在更遠的將來再考慮推出。
 
-2011年6月，ECMAscript 5.1版发布，并且成为ISO国际标准（ISO/IEC 16262:2011）。
+2011 年 6 月， ECMAscript 5.1 版發布，並且成為 ISO 國際標準（ ISO/IEC 16262:2011 ）。
 
-2013年3月，ECMAScript 6草案冻结，不再添加新功能。新的功能设想将被放到ECMAScript 7。
+2013 年 3 月， ECMAScript 6 草案凍結，不再增加新功能。新的功能想法將被放到 ECMAScript 7 。
 
-2013年12月，ECMAScript 6草案发布。然后是12个月的讨论期，听取各方反馈。
+2013 年 12 月， ECMAScript 6 草案發布。然後是 12 個月的討論期，聽取各方的回饋。
 
-2015年6月，ECMAScript 6预计将发布正式版本。
+2015 年 6 月， ECMAScript 6 預計將發布正式版本。
 
-ECMA的第39号技术专家委员会（Technical Committee 39，简称TC39）负责制订ECMAScript标准，成员包括Microsoft、Mozilla、Google等大公司。TC39的总体考虑是，ES5与ES3基本保持兼容，较大的语法修正和新功能加入，将由JavaScript.next完成。当前，JavaScript.next指的是ES6，当第六版发布以后，将指ES7。TC39认为，ES5会在2013年的年中成为JavaScript开发的主流标准，并在今后五年中一直保持这个位置。
+ECMA 的第 39 號技術專家委員會（ Technical Committee 39 ，簡稱 TC39 ）負責制定 ECMAScript 標準，成員包括 Microsoft 、 Mozilla 、 Google 等大公司。 TC39 的整體考量是： ES5 與 ES3 基本上保持相容性，而較大的語法修正和新功能的加入，將由 JavaScript.next 完成。目前 JavaScript.next 指的是 ES6 ，當第六版發布以後，則指為 ES7 。 TC39 認為， ES5 會在 2013 年的年中成為 JavaScript 開發的主流標準，並在今後五年中一直保持這個位置。
 
-## 部署进度
+## 部署進度
 
-由于ES6还没有定案，有些语法规则还会变动，目前支持ES6的软件和开发环境还不多。各大浏览器的最新版本，对ES6的支持可以查看[kangax.github.io/es5-compat-table/es6/](http://kangax.github.io/es5-compat-table/es6/)。
+由於 ES6 還沒有定案，有些語法規則還會再變動，目前支援 ES6 的軟體和開發環境還不多。各大瀏覽器的最新版本對 ES6 的支援可以查閱 [kangax.github.io/es5-compat-table/es6/](http://kangax.github.io/es5-compat-table/es6/) 。
 
-Google公司的V8引擎已经部署了ES6的部分特性。使用Node.js 0.11版，就可以体验这些特性。
+Google 公司的 V8 引擎已經部署了 ES6 的部分特性。使用 Node.js 0.11 版就可以體驗這些特性。
 
-Node.js的0.11版还不是稳定版本，要使用版本管理工具[nvm](https://github.com/creationix/nvm)切换。下载nvm以后，进入项目目录，运行下面的命令。
+Node.js 的 0.11 版還不是穩定版本，要使用版本管理工具 [nvm](https://github.com/creationix/nvm) 切換。下載 nvm 以後，進入專案目錄，執行下面的指令。
 
 ```bash
 
@@ -50,7 +50,7 @@ $ node --harmony
 
 ```
 
-启动命令中的`--harmony`选项可以打开所有已经部署的ES6功能。使用下面的命令，可以查看所有与ES6有关的单个选项。
+啟動指令中的 `--harmony` 選項可以打開所有已經部署的 ES6 功能。使用下面的指令，可以查詢所有與 ES6 有關的單一選項。
 
 ```bash
 
@@ -73,34 +73,34 @@ $ node --v8-options | grep harmony
 
 ```
 
-## Traceur编译器
+## Traceur 編譯器
 
-Google公司的[Traceur](https://github.com/google/traceur-compiler)编译器，可以将ES6代码编译为ES5代码。这意味着，你可以用ES6的方式编写程序，又不用担心浏览器是否支持。
+Google公司的 [Traceur](https://github.com/google/traceur-compiler) 編譯器，可以將 ES6 程式碼編譯為 ES5 的程式碼。這代表著，你可以用 ES6 的方式撰寫程式，又不用擔心瀏覽器是否支援。
 
-它有多种使用方式。
+它有多種使用方式：
 
-**（1）直接插入网页**
+**（1）直接插入網頁**
 
-Traceur允许将ES6代码直接插入网页。
+Traceur 允許將 ES6 程式直接插入網頁。
 
-首先，必须在网页头部加载Traceur库文件。
+首先，必須在網頁頭部載入 Traceur 庫文件。
 
 ```javascript
 
-<!-- 加载Traceur编译器 -->
+<!-- 載入 Traceur 編譯器 -->
 <script src="http://google.github.io/traceur-compiler/bin/traceur.js"
         type="text/javascript"></script>
-<!-- 将Traceur编译器用于网页 -->
+<!-- 將 Traceur 編譯器用於網頁 -->
 <script src="http://google.github.io/traceur-compiler/src/bootstrap.js"
         type="text/javascript"></script>
-<!-- 打开实验选项，否则有些特性可能编译不成功 -->
+<!-- 打開實驗選項，否則有些特性可能編譯失敗 -->
 <script>
         traceur.options.experimental = true;
 </script>
 
 ```
 
-接下来，就可以把ES6代码放入上面这些代码的下方。
+接下來，就可以把 ES6 程式碼放在上面這些程式碼的下方。
 
 ```javascript
 
@@ -120,11 +120,11 @@ Traceur允许将ES6代码直接插入网页。
 
 ```
 
-正常情况下，上面代码会在控制台打印出9。
+正常情況下，上面程式碼會在控制台顯示 9 。
 
-注意，`script`标签的`type`属性的值是`module`，而不是`text/javascript`。这是Traceur编译器识别ES6代码的标识，编译器会自动将所有`type=module`的代码编译为ES5，然后再交给浏览器执行。
+注意， `script` 標籤的 `type` 屬性的值是 `module` ，而不是 `text/javascript` 。這是 Traceur 編譯器識別 ES6 程式碼的標示，編譯器會自動將所有 `type=module` 的程式碼編譯為 ES5 ，然後再交給瀏覽器執行。
 
-如果ES6代码是一个外部文件，也可以用`script`标签插入网页。
+如果 ES6 程式碼是一個外部文件，也可以用 `script` 標籤引入網頁。
 
 ```javascript
 
@@ -133,11 +133,11 @@ Traceur允许将ES6代码直接插入网页。
 
 ```
 
-**（2）在线转换**
+**（2）線上轉換**
 
-Traceur提供一个[在线编译器](http://google.github.io/traceur-compiler/demo/repl.html)，可以在线将ES6代码转为ES5代码。转换后的代码，可以直接作为ES5代码插入网页运行。
+Traceur 提供一個[線上編譯器](http://google.github.io/traceur-compiler/demo/repl.html)，可以在線上將 ES6 程式碼轉為 ES5 程式碼。轉換後的程式碼可以直接當作 ES5 程式碼插入網頁執行。
 
-上面的例子转为ES5代码运行，就是下面这个样子。
+上面的例子轉為 ES5 程式碼執行，結果如下：
 
 ```javascript
 
@@ -168,9 +168,9 @@ $traceurRuntime.ModuleStore.getAnonymousModule(function() {
 
 ```
 
-**（3）命令行转换**
+**（3）終端機轉換**
 
-作为命令行工具使用时，Traceur是一个node.js的模块，首先需要用npm安装。
+當作終端機工具使用時， Traceur 是一個 node.js 的模組，首先需要用 npm 安裝。
 
 ```bash
 
@@ -178,9 +178,9 @@ $ npm install -g traceur
 
 ```
 
-安装成功后，就可以在命令行下使用traceur了。
+安裝成功後，就可以在終端機下使用 traceur 了。
 
-traceur直接运行es6脚本文件，会在标准输出显示运行结果，以前面的calc.js为例。
+traceur 直接執行 ES6 腳本檔案，會在標準輸出顯示執行結果，以前面的 calc.js 為例：
 
 ```bash
 
@@ -190,7 +190,7 @@ Calc constructor
 
 ```
 
-如果要将ES6脚本转为ES5保存，要采用下面的写法
+如果要將 ES6 腳本轉為 ES5 存擋，要採用下面的寫法：
 
 ```bash
 
@@ -198,9 +198,9 @@ $ traceur --script calc.es6.js --out calc.es5.js
 
 ```
 
-上面代码的`--script`选项表示指定输入文件，`--out`选项表示指定输出文件。
+上面程式碼的 `--script` 選項表示指定輸入檔案， `--out` 選項表示指定輸出檔案。
 
-为了防止有些特性编译不成功，最好加上`--experimental`选项。
+為了防止有些特性編譯不成功，最好加上 `--experimental` 選項。
 
 ```bash
 
@@ -208,47 +208,47 @@ $ traceur --script calc.es6.js --out calc.es5.js --experimental
 
 ```
 
-命令行下转换的文件，就可以放到浏览器中运行。
+終端機下轉換的檔案，就可以放到瀏覽器中執行。
 
-**（4）Node.js环境的用法**
+**（4）Node.js 環境的用法**
 
-Traceur的Node.js用法如下（假定已安装traceur模块）。
+Traceur 的 Node.js 用法如下（假設已安裝 traceur 模組）。
 
 ```javascript
 
 var traceur = require('traceur');
 var fs = require('fs');
 
-// 将ES6脚本转为字符串
+// 將 ES6 腳本轉為字串
 var contents = fs.readFileSync('es6-file.js').toString();
 
 var result = traceur.compile(contents, {
   filename: 'es6-file.js',
   sourceMap: true,
-  // 其他设置
+  // 其他設定
   modules: 'commonjs'
 });
 
 if (result.error)
   throw result.error;
 
-// result对象的js属性就是转换后的ES5代码  
+// result 物件的 js 屬性就是轉換後的 ES5 程式碼  
 fs.writeFileSync('out.js', result.js);
-// sourceMap属性对应map文件
+// sourceMap 屬性對應 map 檔案
 fs.writeFileSync('out.js.map', result.sourceMap);
 
 ```
 
 ## ECMAScript 7
 
-2013年3月，ES6的草案封闭，不再接受新功能了。新的功能将被加入ES7。
+2013 年 3 月， ES6 的草案封閉，不再接受新功能了。新的功能將被加入 ES7 。
 
-ES7可能包括的功能有：
+ES7 可能包括的功能有：
 
-（1）**Object.observe**：用来监听对象（以及数组）的变化。一旦监听对象发生变化，就会触发回调函数。
+（1）**Object.observe** ：用來監聽物件（以及陣列）的變化。一旦監聽的對象發生變化，就會觸發回乎函式。
 
-（2）**Multi-Threading**：多线程支持。目前，Intel和Mozilla有一个共同的研究项目RiverTrail，致力于让JavaScript多线程运行。预计这个项目的研究成果会被纳入ECMAScript标准。
+（2）**Multi-Threading** ：支援多線程。目前， Intel 和 Mozilla 有一個共同的研究項目 RiverTrail ，致力於讓 JavaScript 多線程執行。預計這個項目的研究成果會被納入 ECMAScript 標準。
 
-（3）**Traits**：它将是“类”功能（class）的一个替代。通过它，不同的对象可以分享同样的特性。
+（3）**Traits** ：它將是“類別”功能（ class ）的一個替代。通過它，不同的物件可以共享同樣的特性。
 
-其他可能包括的功能还有：更精确的数值计算、改善的内存回收、增强的跨站点安全、类型化的更贴近硬件的低级别操作、国际化支持（Internationalization Support）、更多的数据结构等等。
+其他可能包括的功能還有：更精確的數值計算、改善的記憶體回收、增強的跨站點安全、類型化的更貼近硬體的低等級操作、國際化支援（Internationalization Support）、更多的資料結構等等。

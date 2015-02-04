@@ -1,24 +1,28 @@
-# ECMAScript 6入门
+# ECMAScript 6 入門
 
-《ECMAScript 6入门》是一本开源的JavaScript语言教程，全面介绍ECMAScript 6新引入的语法特性。
+《ECMAScript 6 入門》是一本開源的 JavaScript 語言教學，全面介紹 ECMAScript 6 所新增的語法及特性。
 
 [![cover](images/cover_thumbnail.jpg)](images/cover.jpg)
 
-本书力争覆盖ES6与ES5的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。
+本書力爭覆蓋 ES6 與 ES5 的所有不同之處，對涉及的語法知識給予詳細介紹，並提供大量簡潔易懂的範例程式。
 
-本书为中级难度，适合已有一定JavaScript语言基础的读者，用来了解这门语言的最新发展；也可当作参考手册，查寻新增的语法点。
+本書為中級難度，適合已有一定 JavaScript 語言基礎的讀者，了解這門語言的最新進展；也可當作參考手冊，查詢新增的語法。
 
-全书已由电子工业出版社出版（[版权页](images/copyright.png)，[内页1](images/page1.png)，[内页2](images/page2.png)），铜版纸全彩印刷，附有索引。纸版是根据电子版排印的，内容截止到2014年10月，感谢张春雨编辑支持我将全书开源的做法。如果您对本书感兴趣，建议考虑购买纸版。这样可以使出版社不因出版开源书籍而亏钱，进而鼓励更多的作者开源自己的书籍。
+全書已由電子工業出版社出版（[版權頁](images/copyright.png)，[內頁1](images/page1.png)，[內頁2](images/page2.png)），銅版紙全彩印刷，附有索引。紙版是根據電子版排印的，內容截止到2014年10月，感謝張春雨編輯支持我將全書開源的做法。如果您對本書感興趣，建議考慮購買紙版。這樣可以使出版社不因出版開源書籍而虧錢，進而鼓勵更多的作者開源自己的書籍。
 
-- [京东](http://item.jd.com/11526272.html)
-- [当当](http://product.dangdang.com/23546442.html)
-- [亚马逊](http://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00MQKRLD6/)
+- [京東](http://item.jd.com/11526272.html)
+- [當當](http://product.dangdang.com/23546442.html)
+- [亞馬遜](http://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00MQKRLD6/)
 - [China-pub](http://product.china-pub.com/4284817)
 
-### 版权许可
+### 版權許可
 
-本书采用“保持署名—非商用”创意共享4.0许可证。
+本書採用“姓名標示－非商業性”相同方式分享4.0。
 
-只要保持原作者署名和非商用，您可以自由地阅读、分享、修改本书。
+只要標示原作者姓名和非商業性，您可以自由的閱讀、分享、修改本書。
 
-详细的法律条文请参见[创意共享](http://creativecommons.org/licenses/by-nc/4.0/)网站。
+詳細的法律條文請參照[創用CC授權](http://creativecommons.org/licenses/by-nc/4.0/)網站。
+
+### 附註
+
+本書翻譯自 [ruanyf](https://github.com/ruanyf) 的 [es6tutorial](https://github.com/ruanyf/es6tutorial) ，若想支持原作者可以參考上述連結購買本書的實體書籍。

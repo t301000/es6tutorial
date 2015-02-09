@@ -192,7 +192,7 @@ function show_loading() {
     return loading;
 }
 
-function router() {	
+function router() {
 
     var path = location.hash.replace("#", "./");
 
@@ -204,10 +204,10 @@ function router() {
     // default page if hash is empty
     if (location.pathname === "/index.html") {
         path = location.pathname.replace("index.html", ditto.index);
-        normalize_paths();
+        // normalize_paths();
     } else if (path === "") {
         path = window.location + ditto.index;
-        normalize_paths();
+        // normalize_paths();
     } else {
         path = path + ".md";
     }
@@ -226,7 +226,7 @@ function router() {
         } else {
             document.title = $(ditto.content_id + " h1").text() + " - " + ditto.document_title;
         }
-        normalize_paths();
+        // normalize_paths();
         create_page_anchors();
 
         // 完成代码高亮

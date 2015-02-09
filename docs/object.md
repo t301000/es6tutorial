@@ -1,8 +1,8 @@
-# 对象的扩展
+# 物件的擴增
 
-## 属性的简洁表示法
+## 屬性的簡潔表示法
 
-ES6允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。
+ES6 允許直接寫入變數和函式，作為物件的屬性和方法。這樣的撰寫更加簡潔。
 
 ```javascript
 
@@ -10,7 +10,7 @@ function f( x, y ) {
   return { x, y };
 }
 
-// 等同于
+// 等同於
 
 function f( x, y ) {
   return { x: x, y: y };
@@ -18,7 +18,7 @@ function f( x, y ) {
 
 ```
 
-上面是属性简写的例子，方法也可以简写。
+上面是屬性簡寫的例子，方法也可以簡寫。
 
 ```javascript
 
@@ -28,7 +28,7 @@ var o = {
   }
 };
 
-// 等同于
+// 等同於
 
 var o = {
   method: function() {
@@ -38,25 +38,25 @@ var o = {
 
 ```
 
-下面是一个更实际的例子。
+下面是一個更實際的例子。
 
 ```javascript
 
 var Person = {
 
-  name: '张三',
+  name: '張三',
 
-  //等同于birth: birth
+  // 等同於 birth: birth
   birth,
 
-  // 等同于hello: function ()...
+  // 等同於 hello: function ()...
   hello() { console.log('我的名字是', this.name); }
 
 };
 
 ```
 
-这种写法用于函数的返回值，将会非常方便。
+這種寫法用於函式的回傳值會非常方便。
 
 ```javascript
 
@@ -72,9 +72,9 @@ getPoint()
 
 ```
 
-## 属性名表达式
+## 屬性名表達式
 
-JavaScript语言定义对象的属性，有两种方法。
+JavaScript 語言定義物件的屬性，有兩種方法。
 
 ```javascript
 
@@ -86,9 +86,9 @@ obj['a'+'bc'] = 123;
 
 ```
 
-上面代码的方法一是直接用标识符作为属性名，方法二是用表达式作为属性名，这时要将表达式放在方括号之内。
+上方程式碼的方法一是直接用標示符號作為屬性名，方法二是用表達式作為屬性名稱，這時要將表達式放在方括號之內。
 
-但是，如果使用字面量方式定义对象（使用大括号），在ES5中只能使用方法一（标识符）定义属性。
+但是，如果使用字面量方式定義物件（使用大括號），在 ES5 中只能使用方法一（標示符號）定義屬性。
 
 ```javascript
 
@@ -99,7 +99,7 @@ var obj = {
 
 ```
 
-ES6允许字面量定义对象时，用方法二（表达式）作为对象的属性名，即把表达式放在方括号内。
+ES6 允許字面量定義物件時，用方法二（表達式）作為物件的屬性名稱，即把表達式放在方括號內。
 
 ```javascript
 
@@ -112,7 +112,7 @@ let obj = {
 
 ```
 
-下面是另一个例子。
+下面是另一個例子。
 
 ```javascript
 
@@ -124,12 +124,12 @@ var a = {
 };
 
 a["first word"] // "hello"
-a[lastWord] // "world"
-a["last word"] // "world"
+a[lastWord]     // "world"
+a["last word"]  // "world"
 
 ```
 
-表达式还可以用于定义方法名。
+表達式還可以用於定義方法名稱。
 
 ```javascript
 
@@ -145,29 +145,29 @@ console.log(obj.hello()); // hi
 
 ## Object.is()
 
-Object.is()用来比较两个值是否严格相等。它与严格比较运算符（===）的行为基本一致，不同之处只有两个：一是+0不等于-0，二是NaN等于自身。
+Object.is() 用來比較兩個值是否嚴格相等。它與嚴格比較運算元（===）的行為基本上一致，不同之處只有兩個：一是 +0 不等於 -0，二是 NaN 等於自身。
 
 ```javascript
 
-+0 === -0 //true
++0 === -0   //true
 NaN === NaN // false
 
-Object.is(+0, -0) // false
+Object.is(+0, -0)   // false
 Object.is(NaN, NaN) // true
 
 ```
 
-ES5可以通过下面的代码，部署Object.is()。
+ES5 可以通過下面的程式碼，部署 Object.is()。
 
 ```javascript
 
 Object.defineProperty(Object, 'is', {
   value: function(x, y) {
     if (x === y) {
-      // 针对+0 不等于 -0的情况
+      // 針對 +0 不等於 -0 的情況
       return x !== 0 || 1 / x === 1 / y;
     }
-    // 针对NaN的情况
+    // 針對 NaN 的情況
     return x !== x && y !== y;
   },
   configurable: true,
@@ -179,7 +179,7 @@ Object.defineProperty(Object, 'is', {
 
 ## Object.assign()
 
-Object.assign方法用来将源对象（source）的所有可枚举属性，复制到目标对象（target）。它至少需要两个对象作为参数，第一个参数是目标对象，后面的参数都是源对象。只要有一个参数不是对象，就会抛出TypeError错误。
+Object.assign 方法用來將來源物件（source）的所有可枚舉屬性，複製到目標物件（target）。它至少需要兩個物件作為參數，第一個參數是目標物件，後面的參數都是來源物件。只要有一個參數不是物件，就會拋出 TypeError 錯誤。
 
 ```javascript
 
@@ -193,7 +193,7 @@ target // {a:1, b:2, c:3}
 
 ```
 
-注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+注意，如果目標物件與來源物件有同名屬性，或多個來源物件有同名屬性，則後面的屬性會覆蓋前面的屬性。
 
 ```javascript
 
@@ -207,9 +207,9 @@ target // {a:1, b:2, c:3}
 
 ```
 
-assign方法有很多用处。
+assign 方法有很多用處。
 
-**（1）为对象添加属性**
+**（1）為物件增加屬性**
 
 ```javascript
 
@@ -221,9 +221,9 @@ class Point {
 
 ```
 
-上面方法通过assign方法，将x属性和y属性添加到Point类的对象实例。
+上面方法通過 assign 方法，將 x 屬性和 y 屬性增加到 Point 類別的物件實例。
 
-**（2）为对象添加方法**
+**（2）為物件增加方法**
 
 ```javascript
 
@@ -236,7 +236,7 @@ Object.assign(SomeClass.prototype, {
   }
 });
 
-// 等同于下面的写法
+// 等同於下面的寫法
 SomeClass.prototype.someMethod = function (arg1, arg2) {
   ···
 };
@@ -246,9 +246,9 @@ SomeClass.prototype.anotherMethod = function () {
 
 ```
 
-上面代码使用了对象属性的简洁表示法，直接将两个函数放在大括号中，再使用assign方法添加到SomeClass.prototype之中。
+上面程式碼使用了物件屬性的簡潔表示法，直接將兩個函式放在大括號中，再使用 assign 方法增加到SomeClass.prototype 之中。
 
-**（3）克隆对象**
+**（3）複製物件**
 
 ```javascript
 
@@ -258,9 +258,9 @@ function clone(origin) {
 
 ```
 
-上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。
+上面程式碼將原始物件複製到一個空物件，就得到了相同於原始物件的物件。
 
-不过，采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值。如果想要保持继承链，可以采用下面的代码。
+不過，採用這種方法複製，只能複製原始物件自身的值，不能複製它繼承的值。如果想要保持繼承鏈，可以採用下方的程式碼。
 
 ```javascript
 
@@ -271,7 +271,7 @@ function clone(origin) {
 
 ```
 
-**（4）为属性指定默认值**
+**（4）為屬性指定預設值**
 
 ```javascript
 
@@ -286,35 +286,35 @@ function processContent(options) {
 
 ```
 
-上面代码中，DEFAULTS对象是默认值，options对象是用户提供的参数。assign方法将DEFAULTS和options合并成一个新对象，如果两者有同名属性，则option的属性值会覆盖DEFAULTS的属性值。
+上方程式碼中，DEFAULTS 物件是預設值，options 物件是使用者提供的參數。assign 方法將DEFAULTS 和 options 合併成一個新物件，如果兩者有同名屬性，則 option 的屬性值會覆蓋 DEFAULTS 的屬性值。
 
-## __proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()
+## \_\_proto__ 屬性，Object.setPrototypeOf()，Object.getPrototypeOf()
 
-**（1）__proto__属性**
+**（1）\_\_proto__ 屬性**
 
-__proto__属性，用来读取或设置当前对象的prototype对象。该属性一度被正式写入ES6草案，但后来又被移除。目前，所有浏览器（包括IE11）都部署了这个属性。
+\_\_proto__ 屬性用來讀取或設定目前物件的 prototype 物件。該屬性一度被正式寫入 ES6 草案，但後來又被移除。目前，所有瀏覽器（包括 IE11）都部署了這個屬性。
 
 ```javascript
 
-// es6的写法
+// es6 的寫法
 
 var obj = {
   __proto__: someOtherObj,
   method: function() { ... }
 }
 
-// es5的写法
+// es5 的寫法
 
 var obj = Object.create(someOtherObj);
 obj.method = function() { ... }
 
 ```
 
-有了这个属性，实际上已经不需要通过Object.create()来生成新对象了。
+有了這個屬性，實際上已經不需要通過 Object.create() 來產生新物件了。
 
 **（2）Object.setPrototypeOf()**
 
-Object.setPrototypeOf方法的作用与__proto__相同，用来设置一个对象的prototype对象。它是ES6正式推荐的设置原型对象的方法。
+Object.setPrototypeOf 方法的作用與 \_\_proto__ 相同，用來設定一個物件的 prototype 物件。它是 ES6 正式推薦的設定原型物件的方法。
 
 ```javascript
 
@@ -326,7 +326,7 @@ var o = Object.setPrototypeOf({}, null);
 
 ```
 
-该方法等同于下面的函数。
+該方法等同於下面的函式。
 
 ```javascript
 
@@ -339,7 +339,7 @@ function (obj, proto) {
 
 **（3）Object.getPrototypeOf()**
 
-该方法与setPrototypeOf方法配套，用于读取一个对象的prototype对象。
+該方法與 setPrototypeOf 方法為一組，用於讀取一個物件的 prototype 物件。
 
 ```javascript
 
@@ -349,7 +349,7 @@ Object.getPrototypeOf(obj)
 
 ## Symbol
 
-ES6引入了一种新的原始数据类型Symbol，表示独一无二的ID。它通过Symbol函数生成。
+ES6 引入了一種新的原始資料型態 Symbol，表示獨一無二的 ID。它透過 Symbol 函式產生。
 
 ```javascript
 
@@ -360,9 +360,9 @@ typeof symbol
 
 ```
 
-上面代码中，变量symbol1就是一个独一无二的ID。typeof运算符的结果，表明变量symbol1是Symbol数据类型，而不是字符串之类的其他类型。
+上面程式碼中，變數 symbol1 就是一個獨一無二的 ID。typeof 運算元的結果說明變數 symbol1 是Symbol 資料型態，而不是字串之類的其他類型。
 
-Symbol函数可以接受一个字符串作为参数，表示Symbol实例的名称。
+Symbol 函式可以接受一個字串作為參數，表示 Symbol 實例的名稱。
 
 ```javascript
 
@@ -373,11 +373,11 @@ mySymbol.name
 
 ```
 
-上面代码表示，Symbol函数的字符串参数，用来指定生成的Symbol的名称，可以通过name属性读取。之所以要新增name属性，是因为键名是Symbol类型，而有些场合需要一个字符串类型的值来指代这个键。
+上方程式碼說明 Symbol 函式的字串參數，用來指定產生的 Symbol 的名稱，可以通過 name 屬性讀取。之所以要新增 name 屬性，是因為鍵名是 Symbol 類型，而有些場合需要一個字串類型的值來指代這個鍵。
 
-注意，Symbol函数前不能使用new命令，否则会报错。这是因为生成的Symbol是一个原始类型的值，不是对象。
+注意，Symbol 函式前不能使用 new 指令，否則會出現錯誤。這是因為產生的 Symbol 是一個原始類型的值，不是物件。
 
-Symbol类型的值不能与其他类型的值进行运算，会报错。
+Symbol 類型的值不能與其他類型的值進行運算，會出現錯誤。
 
 ```javascript
 
@@ -387,7 +387,7 @@ var sym = Symbol('My symbol');
 
 ```
 
-但是，Symbol类型的值可以转为字符串。
+但是，Symbol 類型的值可以轉為字串。
 
 ```javascript
 
@@ -399,7 +399,7 @@ sym.toString()
 
 ```
 
-symbol的最大特点，就是每一个Symbol都是不相等的，保证产生一个独一无二的值。
+symbol 的最大特性，就是每一個 Symbol 都是不相等的，保證產生一個獨一無二的值。
 
 ```javascript
 
@@ -424,24 +424,24 @@ function f(w) {
 
 ```
 
-上面代码中，w1、w2、w3三个变量都等于`Symbol()`，但是它们的值是不相等的。
+上方程式碼中，w1、w2、w3 三個變數都等於 `Symbol()`，但是它們的值是不相等的。
 
-由于这种特点，Symbol类型适合作为标识符，用于对象的属性名，保证了属性名之间不会发生冲突。如果一个对象由多个模块构成，这样就不会出现同名的属性，也就防止了键值被不小心改写或覆盖。Symbol类型还可以用于定义一组常量，防止它们的值发生冲突。
+由於這種特點，Symbol 類型適合作為標示符號，用於物件的屬性名，保證了屬性名之間不會發生衝突。如果一個物件由多個模組構成，這樣就不會出現同名的屬性，也防止了鍵值被不小心改寫或覆蓋。Symbol 類型還可以用於定義一組常數，防止它們的值發生衝突。
 
 ```javascript
 
 var mySymbol = Symbol();
 
-// 第一种写法
+// 第一種寫法
 var a = {};
 a[mySymbol] = 'Hello!';
 
-// 第二种写法
+// 第二種寫法
 var a = {
    [mySymbol]: 123
 };
 
-// 第三种写法
+// 第三種寫法
 var a = {};
 Object.defineProperty(a, mySymbol, { value: 'Hello!' });
 
@@ -449,9 +449,9 @@ a[mySymbol] // "Hello!"
 
 ```
 
-上面代码通过方括号结构和Object.defineProperty两种方法，将对象的属性名指定为一个Symbol值。
+上方程式碼通過方括號結構和 Object.defineProperty 兩種方法，將物件的屬性名稱指定為一個 Symbol 值。
 
-注意，不能使用点结构，将Symbol值作为对象的属性名。
+注意，不能使用點結構將 Symbol 值作為物件的屬性名稱。
 
 ```javascript
 
@@ -464,9 +464,9 @@ a[mySymbol] // undefined
 
 ```
 
-上面代码中，mySymbol属性的值为未定义，原因在于`a.mySymbol`这样的写法，并不是把一个Symbol值当作属性名，而是把mySymbol这个字符串当作属性名进行赋值，这是因为点结构中的属性名永远都是字符串。
+上方程式碼中，mySymbol 屬性的值為未定義，原因在於 `a.mySymbol` 這樣的寫法並不是把一個 Symbol 值當作屬性名，而是把 mySymbol 這個字串當作屬性名進行賦值，這是因為點結構中的屬性名稱永遠都是字串。
 
-下面的写法为Map结构添加了一个成员，但是该成员永远无法被引用。
+下方的寫法為 Map 結構增加了一個成員，但是該成員永遠無法被引用。
 
 ```javascript
 
@@ -476,7 +476,7 @@ a.size // 1
 
 ```
 
-为Symbol函数添加一个参数，就可以引用了。
+為 Symbol 函式增加一個參數就可以引用了。
 
 ```javascript
 
@@ -485,7 +485,7 @@ a.set(Symbol('my_key'), 'Noise');
 
 ```
 
-如果要在对象内部使用Symbol属性名，必须采用属性名表达式。
+如果要在物件內部使用 Symbol 屬性名稱，必須使用屬性名稱表達式。
 
 ```javascript
 
@@ -499,7 +499,7 @@ obj[specialMethod](123);
 
 ```
 
-采用增强的对象写法，上面代码的obj对象可以写得更简洁一些。
+採用加強的物件寫法，上方程式碼的 obj 物件可以寫得更簡潔一點。
 
 ```javascript
 
@@ -509,7 +509,7 @@ let obj = {
 
 ```
 
-Symbol类型作为属性名，不会出现在for...in循环中，也不会被Object.keys()、Object.getOwnPropertyNames()返回，但是有一个对应的Object.getOwnPropertySymbols方法，以及Object.getOwnPropertyKeys方法都可以获取Symbol属性名。
+Symbol 類型作為屬性名稱，不會出現在 for...in 迴圈中，也不會被 Object.keys()、Object.getOwnPropertyNames() 回傳，但是有一個對應的 Object.getOwnPropertySymbols 方法，以及 Object.getOwnPropertyKeys 方法都可以取得 Symbol 屬性名稱。
 
 ```javascript
 
@@ -529,9 +529,9 @@ Object.getOwnPropertySymbols(obj)
 
 ```
 
-上面代码中，使用Object.getOwnPropertyNames方法得不到Symbol属性名，需要使用Object.getOwnPropertySymbols方法。
+上方程式碼中，使用 Object.getOwnPropertyNames 方法得不到 Symbol 屬性名稱，需要使用 Object.getOwnPropertySymbols 方法。
 
-Reflect.ownKeys方法返回所有类型的键名。
+Reflect.ownKeys 方法回傳所有類型的鍵名。
 
 ```javascript
 
@@ -548,11 +548,11 @@ Reflect.ownKeys(obj)
 
 ## Proxy
 
-Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。
+Proxy 用於修改某些操作的預設行為，等同於在語言層面做出修改，所以屬於一種“元編程”（meta programming），即對編程語言進行編程。
 
-Proxy可以理解成在目标对象之前，架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。proxy这个词的原意是代理，用在这里表示由它来“代理”某些操作。
+Proxy 可以理解成在目標物件之前，架設一層“攔截”，外界對該物件的存取，都必須先通過這層攔截，因此提供了一種機制，可以對外界的存取進行過濾和改寫。proxy 這個詞的原意是代理，用在這裡表示由它來“代理”某些操作。
 
-ES6原生提供Proxy构造函数，用来生成Proxy实例。
+ES6 原生提供 Proxy 建構函式，用來產生 Proxy 實例。
 
 ```javascript
 
@@ -568,11 +568,11 @@ proxy.title // 35
 
 ```
 
-作为构造函数，Proxy接受两个参数。第一个参数是所要代理的目标对象（上例是一个空对象），即如果没有Proxy的介入，操作原来要访问的就是这个对象；第二个参数是一个设置对象，对于每一个被代理的操作，需要提供一个对应的处理函数，该函数将拦截对应的操作。比如，上面代码中，设置对象有一个get方法，用来拦截对目标对象属性的访问请求。get方法的两个参数分别是目标对象和所要访问的属性。可以看到，由于拦截函数总是返回35，所以访问任何属性都得到35。
+作為建構函式，Proxy 接受兩個參數。第一個參數是所要代理的目標物件（上例是一個空物件），意即如果沒有 Proxy 的介入，操作原來要存取的就是這個物件；第二個參數是一個設定物件，對於每一個被代理的操作，需要提供一個對應的處理函式，該函式將攔截對應的操作。比如，上方程式碼中，設定物件有一個 get 方法，用來攔截對目標物件屬性的存取請求。get 方法的兩個參數分別是目標物件和所要存取的屬性。可以看到，由於攔截函式總是回傳 35，所以存取任何屬性都得到 35。
 
-注意，要使得Proxy起作用，必须针对Proxy实例（上例是proxy对象）进行操作，而不是针对目标对象（上例是空对象）进行操作。
+注意，要使 Proxy 產生作用，必須針對 Proxy 實例（上例是 proxy 物件）進行操作，而不是針對目標物件（上例是空物件）進行操作。
 
-Proxy实例也可以作为其他对象的原型对象。
+Proxy 實例也可以作為其他物件的原型物件。
 
 ```javascript
 
@@ -588,16 +588,16 @@ obj.time // 35
 
 ```
 
-上面代码中，proxy对象是obj对象的原型，obj对象本身并没有time属性，所有根据原型链，会在proxy对象上读取该属性，导致被拦截。
+上方程式碼中，proxy 物件是 obj 物件的原型，obj 物件本身並沒有 time 屬性，所以根據原型鏈，會在 proxy 物件上讀取該屬性，導致被攔截。
 
-对于没有设置拦截的操作，则直接落在目标函数上，按照原先的方式产生结果。
+對於沒有設定攔截的操作，則直接落在目標函式上，按照原先的方式產生結果。
 
-下面是另一个拦截读取操作的例子。
+下面是另一個攔截讀取操作的例子。
 
 ```javascript
 
 var person = {
-  name: "张三"
+  name: "張三"
 };
 
 var proxy = new Proxy(person, {
@@ -610,14 +610,14 @@ var proxy = new Proxy(person, {
   }
 });
 
-proxy.name // "张三"
-proxy.age // 抛出一个错误
+proxy.name // "張三"
+proxy.age  // 拋出一個錯誤
 
 ```
 
-上面代码表示，如果访问目标对象不存在的属性，会抛出一个错误。如果没有这个拦截函数，访问不存在的属性，只会返回undefined。
+上方程式碼說明了，如果存取目標物件不存在的屬性，就會拋出一個錯誤。如果沒有這個攔截函式，存取不存在的屬性，只會回傳 undefined。
 
-除了取值函数get，Proxy还可以设置存值函数set，用来拦截某个属性的赋值行为。假定Person对象有一个age属性，该属性应该是一个不大于200的整数，那么可以使用Proxy对象保证age的属性值符合要求。
+除了存取函式 get，Proxy 還可以設定存取函式 set，用來攔截某個屬性的賦值行為。假定 Person 物件有一個 age 屬性，該屬性應該是一個不大於 200 的整數，那麼可以使用 Proxy 物件保證 age 的屬性值符合要求。
 
 ```javascript
 
@@ -632,7 +632,7 @@ let validator = {
       }
     }
 
-    // 对于age以外的属性，直接保存
+    // 對於 age 以外的屬性，直接儲存
     obj[prop] = value;
   }
 };
@@ -641,15 +641,15 @@ let person = new Proxy({}, validator);
 
 person.age = 100;
 
-person.age // 100
-person.age = 'young' // 报错
-person.age = 300 // 报错
+person.age           // 100
+person.age = 'young' // 出現錯誤
+person.age = 300     // 出現錯誤
 
 ```
 
-上面代码中，由于设置了存值函数set，任何不符合要求的age属性赋值，都会抛出一个错误。利用set方法，还可以数据绑定，即每当对象发生变化时，会自动更新DOM。
+上方程式碼中，由於設定了存取函式 set，任何不符合要求的 age 屬性賦值，都會拋出一個錯誤。利用 set 方法，還可以資料綁定，即每當物件發生變化時，會自動更新DOM。
 
-ownKeys方法用来拦截Object.keys()操作。
+ownKeys 方法用來攔截 Object.keys() 操作。
 
 ```javascript
 
@@ -668,29 +668,29 @@ Object.keys(proxy)
 
 ```
 
-上面代码拦截了对于target对象的Object.keys()操作，返回预先设定的数组。
+上方程式碼攔截了對於 target 物件的 Object.keys() 操作，回傳預先設定的陣列。
 
-Proxy支持的拦截操作一览。
+Proxy 支援的攔截操作一覽。
 
-- defineProperty(target, propKey, propDesc)：返回一个布尔值，拦截Object.defineProperty(proxy, propKey, propDesc）
-- deleteProperty(target, propKey) ：返回一个布尔值，拦截delete proxy[propKey]
-- enumerate(target)：返回一个遍历器，拦截for (x in proxy)
-- get(target, propKey, receiver)：返回类型不限，拦截对象属性的读取
-- getOwnPropertyDescriptor(target, propKey) ：返回属性的描述对象，拦截Object.getOwnPropertyDescriptor(proxy, propKey)
-- getPrototypeOf(target) ：返回一个对象，拦截Object.getPrototypeOf(proxy)
-- has(target, propKey)：返回一个布尔值，拦截propKey in proxy
-- isExtensible(target)：返回一个布尔值，拦截Object.isExtensible(proxy)
-- ownKeys(target)：返回一个数组，拦截Object.getOwnPropertyPropertyNames(proxy)、Object.getOwnPropertyPropertySymbols(proxy)、Object.keys(proxy)
-- preventExtensions(target)：返回一个布尔值，拦截Object.preventExtensions(proxy)
-- set(target, propKey, value, receiver)：返回一个布尔值，拦截对象属性的设置
-- setPrototypeOf(target, proto)：返回一个布尔值，拦截Object.setPrototypeOf(proxy, proto)
+- defineProperty(target, propKey, propDesc)：回傳一個布林值，攔截 Object.defineProperty(proxy, propKey, propDesc）
+- deleteProperty(target, propKey) ：回傳一個布林值，攔截 delete proxy[propKey]
+- enumerate(target)：回傳一個迭代器，攔截 for (x in proxy)
+- get(target, propKey, receiver)：回傳類型不限，攔截物件屬性的讀取
+- getOwnPropertyDescriptor(target, propKey) ：回傳屬性的描述物件，攔截 Object.getOwnPropertyDescriptor(proxy, propKey)
+- getPrototypeOf(target) ：回傳一個物件，攔截 Object.getPrototypeOf(proxy)
+- has(target, propKey)：回傳一個布林值，攔截 propKey in proxy
+- isExtensible(target)：回傳一個布林值，攔截 Object.isExtensible(proxy)
+- ownKeys(target)：回傳一個陣列，攔截 Object.getOwnPropertyPropertyNames(proxy)、Object.getOwnPropertyPropertySymbols(proxy)、Object.keys(proxy)
+- preventExtensions(target)：回傳一個布林值，攔截 Object.preventExtensions(proxy)
+- set(target, propKey, value, receiver)：回傳一個布林值，攔截物件屬性的設定
+- setPrototypeOf(target, proto)：回傳一個布林值，攔截 Object.setPrototypeOf(proxy, proto)
 
-如果目标对象是函数，那么还有两种额外操作可以拦截。
+如果目標物件是函式，那麼還有兩種額外操作可以攔截。
 
-- apply方法：拦截Proxy实例作为函数调用的操作，比如proxy(···)、proxy.call(···)、proxy.apply(···)。
-- construct方法：拦截Proxy实例作为构造函数调用的操作，比如new proxy(···)。
+- apply 方法：攔截 Proxy 實例作為函式呼叫的操作，例如 proxy(···)、proxy.call(···)、proxy.apply(···)。
+- construct 方法：攔截 Proxy 實例作為建構函式呼叫的操作，比如 new proxy(···)。
 
-Proxy.revocable方法返回一个可取消的Proxy实例。
+Proxy.revocable 方法回傳一個可取消的 Proxy 實例。
 
 ```javascript
 
@@ -707,11 +707,11 @@ proxy.foo // TypeError: Revoked
 
 ```
 
-Proxy.revocable方法返回一个对象，该对象的proxy属性是Proxy实例，revoke属性是一个函数，可以取消Proxy实例。上面代码中，当执行revoke函数之后，再访问Proxy实例，就会抛出一个错误。
+Proxy.revocable 方法回傳一個物件，該物件的 proxy 屬性是 Proxy 實例，revoke 屬性是一個函式，可以取消 Proxy 實例。上方程式碼中，當執行 revoke 函式之後，再存取 Proxy 實例，就會拋出一個錯誤。
 
 ## Object.observe()，Object.unobserve()
 
-Object.observe方法用来监听对象（以及数组）的变化。一旦监听对象发生变化，就会触发回调函数。
+Object.observe 方法用來監聽物件（以及陣列）的變化。一旦監聽物件發生變化，就會觸發回呼函式。
 
 ```javascript
 
@@ -728,9 +728,9 @@ user.fullName // 'Michael Jackson'
 
 ```
 
-上面代码中，Object.observer方法监听user对象。一旦该对象发生变化，就自动生成fullName属性。
+上方程式碼中，Object.observer 方法監聽 user 物件。一旦該物件發生變化，就自動產生 fullName 屬性。
 
-一般情况下，Object.observe方法接受两个参数，第一个参数是监听的对象，第二个函数是一个回调函数。一旦监听对象发生变化（比如新增或删除一个属性），就会触发这个回调函数。很明显，利用这个方法可以做很多事情，比如自动更新DOM。
+一般情況下，Object.observe 方法接受兩個參數，第一個參數是監聽的物件，第二個參數是一個回呼函式。一旦監聽物件發生變化（例如新增或刪除一個屬性），就會觸發這個回呼函式。很明顯，利用這個方法可以做很多事情，例如自動更新 DOM。
 
 ```javascript
 
@@ -745,9 +745,9 @@ Object.observe(user, function(changes){
 
 ```
 
-上面代码中，只要user对象发生变化，就会自动更新DOM。如果配合jQuery的change方法，就可以实现数据对象与DOM对象的双向自动绑定。
+上方程式碼中，只要 user 物件發生變化，就會自動更新 DOM。如果配合 jQuery 的 change 方法，就可以實作資料物件與 DOM 物件的雙向自動綁定。
 
-回调函数的changes参数是一个数组，代表对象发生的变化。下面是一个更完整的例子。
+回呼函式的 changes 參數是一個陣列，代表物件發生的變化。下方是一個更完整的例子。
 
 ```javascript
 
@@ -755,10 +755,10 @@ var o = {};
 
 function observer(changes){
     changes.forEach(function(change) {
-		console.log('发生变动的属性：' + change.name);
-		console.log('变动前的值：' + change.oldValue);
-		console.log('变动后的值：' + change.object[change.name]);
-		console.log('变动类型：' + change.type);
+		console.log('發生變動的屬性：' + change.name);
+		console.log('變動前的值：' + change.oldValue);
+		console.log('變動後的值：' + change.object[change.name]);
+		console.log('變動類型：' + change.type);
     });
 }
 
@@ -766,7 +766,7 @@ Object.observe(o, observer);
 
 ```
 
-参照上面代码，Object.observe方法指定的回调函数，接受一个数组（changes）作为参数。该数组的成员与对象的变化一一对应，也就是说，对象发生多少个变化，该数组就有多少个成员。每个成员是一个对象（change），它的name属性表示发生变化源对象的属性名，oldValue属性表示发生变化前的值，object属性指向变动后的源对象，type属性表示变化的种类。基本上，change对象是下面的样子。
+參照上面程式碼，Object.observe 方法指定的回呼函式，接受一個陣列（changes）作為參數。該陣列的成員與物件的變化一一對應，也就是說，物件發生多少個變化，該陣列就有多少個成員。每個成員是一個物件（change），它的 name 屬性表示發生變化來源物件的屬性名，oldValue 屬性表示發生變化前的值，object 屬性指向變動後的來源物件，type 屬性表示變化的種類。基本上，change 物件是下面的樣子。
 
 ```javascript
 
@@ -779,16 +779,16 @@ var change = {
 
 ```
 
-Object.observe方法目前共支持监听六种变化。
+Object.observe 方法目前共支援監聽六種變化。
 
-- add：添加属性
-- update：属性值的变化
-- delete：删除属性
-- setPrototype：设置原型
-- reconfigure：属性的attributes对象发生变化
-- preventExtensions：对象被禁止扩展（当一个对象变得不可扩展时，也就不必再监听了）
+- add：增加屬性
+- update：屬性值的變化
+- delete：刪除屬性
+- setPrototype：設定原型
+- reconfigure：屬性的 attributes 物件發生變化
+- preventExtensions：物件被禁止擴增（當一個物件變得不可擴增時，也就不必再監聽了）
 
-Object.observe方法还可以接受第三个参数，用来指定监听的事件种类。
+Object.observe 方法還可以接受第三個參數，用來指定監聽的事件種類。
 
 ```javascript
 
@@ -796,9 +796,9 @@ Object.observe(o, observer, ['delete']);
 
 ```
 
-上面的代码表示，只在发生delete事件时，才会调用回调函数。
+上方的程式碼表示，只在發生 delete 事件時，才會呼叫回呼函式。
 
-Object.unobserve方法用来取消监听。
+Object.unobserve 方法用來取消監聽。
 
 ```javascript
 
@@ -806,4 +806,4 @@ Object.unobserve(o, observer);
 
 ```
 
-注意，Object.observe和Object.unobserve这两个方法不属于ES6，而是属于ES7的一部分。不过，Chrome浏览器从33版起就已经支持。
+注意，Object.observe 和 Object.unobserve 這兩個方法不屬於 ES6，而是屬於 ES7 的一部分。不過，Chrome 瀏覽器從第 33 版起就已經支援。
